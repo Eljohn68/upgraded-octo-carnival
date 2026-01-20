@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSU Senior High School Admissions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-image: url('download (2).jpg'); 
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .bg-sanuriel-green { background-color: #1a3c34; }
+        .text-sanuriel-gold { color: #c5a059; }
+        .border-sanuriel-gold { border-color: #c5a059; }
+        .focus-ring-gold:focus { --tw-ring-color: #c5a059; outline: 2px solid #c5a059; }
+        
+        .form-overlay { background-color: rgba(255, 255, 255, 0.98); }
+
+        .glass-section {
+            background: rgba(79, 70, 229, 0.1); 
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(79, 70, 229, 0.3);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-slide-up { animation: slideUp 0.6s ease-out forwards; }
+
+        input, select, textarea {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen py-10 px-4">
+
+    <div class="max-w-4xl mx-auto form-overlay shadow-2xl rounded-sm overflow-hidden">
+        <div class="bg-sanuriel-green p-8 border-b-4 border-sanuriel-gold text-center">
+            <h1 class="text-3xl font-bold text-sanuriel-gold uppercase tracking-wide">Colegio de San Uriel (CSU)</h1>
+            <p class="text-white mt-2 text-lg italic">Senior High School Admissions SY 2026-2027</p>
+        </div>
+
+        <form class="p-8 space-y-8">
+            <section class="bg-gray-50 p-6 rounded border-l-4 border-sanuriel-gold">
+                <h2 class="font-bold text-gray-800 mb-4 text-xl">Data Privacy Consent <span class="text-red-500">*</span></h2>
+                <p class="text-sm text-gray-600 mb-4 leading-relaxed">I hereby give my consent to Colegio de San Uriel for the collection and processing of my personal data for Senior High School enrollment in compliance with the Data Privacy Act of 2012.</p>
+                <label class="flex items-center space-x-3 cursor-pointer">
+                    <input type="radio" name="privacy" id="agreeBtn" onclick="revealForm()" class="w-4 h-4 text-sanuriel-green border-gray-300 focus-ring-gold" required>
+                    <span class="text-gray-700 font-bold">I AGREE</span>
+                </label>
+            </section>
+
+            <div id="extraFields" class="hidden space-y-10">
+                
+                <h2 class="text-2xl font-bold text-sanuriel-green border-b-2 border-sanuriel-gold pb-2 uppercase tracking-tight">SHS Student Registration</h2>
+
+                <section>
+                    <h3 class="text-xs font-bold text-gray-400 uppercase mb-4 tracking-widest">Full Legal Name</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase">Surname *</label>
+                            <input type="text" placeholder="Surname" class="w-full border border-gray-300 p-2 focus:border-sanuriel-gold outline-none" required>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase">First Name *</label>
+                            <input type="text" placeholder="First Name" class="w-full border border-gray-300 p-2 focus:border-sanuriel-gold outline-none" required>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase">Middle Name</label>
+                            <input type="text" placeholder="Middle Name" class="w-full border border-gray-300 p-2 focus:border-sanuriel-gold outline-none">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="bg-gray-50 p-6 rounded shadow-inner">
+                    <label class="block font-bold text-gray-800 mb-4 uppercase text-sm">Select Academic Strand *</label>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                        <label class="flex items-center space-x-3 p-4 bg-white border border-gray-200 rounded hover:border-sanuriel-gold cursor-pointer transition-colors">
+                            <input type="radio" name="strand" value="STEM" class="w-4 h-4"> 
+                            <div><span class="block font-bold">STEM</span><span class="text-xs text-gray-500 italic">Science, Tech, Engineering, Math</span></div>
+                        </label>
+                        <label class="flex items-center space-x-3 p-4 bg-white border border-gray-200 rounded hover:border-sanuriel-gold cursor-pointer transition-colors">
+                            <input type="radio" name="strand" value="HUMSS" class="w-4 h-4"> 
+                            <div><span class="block font-bold">HUMSS</span><span class="text-xs text-gray-500 italic">Humanities and Social Sciences</span></div>
+                        </label>
+                        <label class="flex items-center space-x-3 p-4 bg-white border border-gray-200 rounded hover:border-sanuriel-gold cursor-pointer transition-colors">
+                            <input type="radio" name="strand" value="ABM" class="w-4 h-4"> 
+                            <div><span class="block font-bold">ABM</span><span class="text-xs text-gray-500 italic">Accountancy and Business</span></div>
+                        </label>
+                        <label class="flex items-center space-x-3 p-4 bg-white border border-gray-200 rounded hover:border-sanuriel-gold cursor-pointer transition-colors">
+                            <input type="radio" name="strand" value="TVL" class="w-4 h-4"> 
+                            <div><span class="block font-bold">TVL</span><span class="text-xs text-gray-500 italic">Technical-Vocational-Livelihood</span></div>
+                        </label>
+                    </div>
+                </section>
+
+                <section class="space-y-6">
+                    <h3 class="text-xs font-bold text-gray-400 uppercase mb-4 tracking-widest">Personal Identification & Health</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Height (cm)</label>
+                            <input type="text" placeholder="cm" class="w-full border-b-2 border-gray-300 py-2 focus:border-sanuriel-gold outline-none bg-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Weight (kg)</label>
+                            <input type="text" placeholder="kg" class="w-full border-b-2 border-gray-300 py-2 focus:border-sanuriel-gold outline-none bg-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Blood Type</label>
+                            <select class="w-full border-b-2 border-gray-300 py-2 focus:border-sanuriel-gold outline-none bg-transparent">
+                                <option>N/A</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Age *</label>
+                            <input type="number" class="w-full border-b-2 border-gray-300 py-2 focus:border-sanuriel-gold outline-none bg-transparent" required>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <input type="text" placeholder="Place of Birth *" class="w-full border-b-2 border-gray-300 py-2 focus:border-sanuriel-gold outline-none bg-transparent" required>
+                        <input type="text" placeholder="Citizenship *" class="w-full border-b-2 border-gray-300 py-2 focus:border-sanuriel-gold outline-none bg-transparent" required>
+                        <input type="text" placeholder="LRN (12 Digits) *" class="w-full border-b-2 border-gray-300 py-2 focus:border-sanuriel-gold outline-none bg-transparent" required>
+                    </div>
+                </section>
+
+                <section class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <input type="url" placeholder="Facebook Profile Link *" class="w-full border-b-2 border-gray-300 py-2 focus:border-sanuriel-gold outline-none bg-transparent" required>
+                        <input type="email" placeholder="Gmail Address *" class="w-full border-b-2 border-gray-300 py-2 focus:border-sanuriel-gold outline-none bg-transparent" required>
+                    </div>
+                    <input type="text" placeholder="Complete Home Address *" class="w-full border-b-2 border-gray-300 py-2 focus:border-sanuriel-gold outline-none bg-transparent" required>
+                </section>
+
+                <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="p-5 border border-gray-100 bg-gray-50 rounded">
+                        <h4 class="font-bold text-sanuriel-green mb-4 text-xs uppercase italic">Mother's Details</h4>
+                        <input type="text" placeholder="Mother's Full Name" class="w-full border-b border-gray-300 py-1 mb-4 focus:border-sanuriel-gold outline-none bg-transparent">
+                        <input type="text" placeholder="Mother's Occupation" class="w-full border-b border-gray-300 py-1 focus:border-sanuriel-gold outline-none bg-transparent">
+                    </div>
+                    <div class="p-5 border border-gray-100 bg-gray-50 rounded">
+                        <h4 class="font-bold text-sanuriel-green mb-4 text-xs uppercase italic">Father's Details</h4>
+                        <input type="text" placeholder="Father's Full Name" class="w-full border-b border-gray-300 py-1 mb-4 focus:border-sanuriel-gold outline-none bg-transparent">
+                        <input type="text" placeholder="Father's Occupation" class="w-full border-b border-gray-300 py-1 focus:border-sanuriel-gold outline-none bg-transparent">
+                    </div>
+                </section>
+
+                <section class="glass-section p-6 rounded-md shadow-lg border-l-8 border-indigo-500">
+                    <h3 class="text-sm font-bold text-indigo-800 uppercase mb-6 tracking-widest text-center">SHS Requirement Submissions</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="p-4 rounded border border-indigo-200 bg-white/40">
+                            <label class="block text-xs font-bold text-indigo-900 uppercase mb-3 italic">Form 138 (Report Card) *</label>
+                            <input type="file" class="w-full text-xs text-indigo-900 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-xs file:font-bold file:bg-indigo-600 file:text-white hover:file:bg-indigo-700 cursor-pointer">
+                        </div>
+                        <div class="p-4 rounded border border-indigo-200 bg-white/40">
+                            <label class="block text-xs font-bold text-indigo-900 uppercase mb-3 italic">Certificate of Completion *</label>
+                            <input type="file" class="w-full text-sm text-indigo-900 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-xs file:font-bold file:bg-indigo-600 file:text-white hover:file:bg-indigo-700 cursor-pointer">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="space-y-4">
+                    <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest">In Case of Emergency</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <input type="text" placeholder="Guardian Name *" class="w-full border-b-2 border-gray-300 py-2 focus:border-sanuriel-gold outline-none bg-transparent" required>
+                        <input type="text" placeholder="Relationship *" class="w-full border-b-2 border-gray-300 py-2 focus:border-sanuriel-gold outline-none bg-transparent" required>
+                        <input type="tel" placeholder="Mobile Number *" class="w-full border-b-2 border-gray-300 py-2 focus:border-sanuriel-gold outline-none bg-transparent" required>
+                    </div>
+                </section>
+
+                <div class="pt-6 pb-12 text-center">
+                    <button type="submit" class="bg-sanuriel-green text-sanuriel-gold font-bold py-4 px-20 rounded shadow-xl hover:brightness-110 active:scale-95 transition-all uppercase tracking-widest border-b-4 border-sanuriel-gold">
+                        Submit SHS Application
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function revealForm() {
+            const fields = document.getElementById('extraFields');
+            fields.classList.remove('hidden');
+            fields.classList.add('animate-slide-up');
+        }
+    </script>
+</body>
+</html>
